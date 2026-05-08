@@ -2,6 +2,11 @@ import './App.css';
 import Nav from "./components/Nav";
 import Landing from "./components/Landing";
 import Highlights from "./components/Highlights";
+import Featured from "./components/Featured";
+import Book from './components/UI/Book';
+import Discounted from './components/Discounted';
+import Explore from './components/Explore';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -9,6 +14,10 @@ function App() {
       <Nav />
       <Landing />
       <Highlights />
+      <Featured />
+      <Discounted />
+      <Explore />
+      <Footer />
     </div>
   )
 }
