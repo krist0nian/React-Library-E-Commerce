@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LibraryLogo from '../assets/Library.svg';
+import { Link } from "react-router-dom";
 
 const Nav = () => {
     function openMenu() {
@@ -14,14 +15,14 @@ const Nav = () => {
     return (
         <nav>
             <div className="nav__container">
-                <a href="/">
-                    <img src={LibraryLogo} alt="Logo" className="library__logo"/></a>
+                <Link to="/">
+                    <img src={LibraryLogo} alt="Logo" className="library__logo"/></Link>
                 <ul className="nav__links">
                     <li className="nav__list">
                         <a href="/" className="nav__link">Home</a>
                     </li>
                     <li className="nav__list">
-                        <a href="/" className="nav__link">
+                        <a href="/books" className="nav__link">
                         Books</a>
                     </li>
                     <button className="btn__menu" onClick={openMenu}>
@@ -43,13 +44,13 @@ const Nav = () => {
                             <a href="/" className="menu__link">Home</a>
                         </li>
                         <li className="menu__list">
-                            <a href="/" className="menu__link">Books</a>
+                            <a href="/books" className="menu__link">Books</a>
                         </li>
                         <li className="menu__list">
-                            <a href="/cart" className="menu__link">
+                            <Link to="/cart" className="menu__link">
                                 <FontAwesomeIcon icon="shopping-cart" />
                                 Cart
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

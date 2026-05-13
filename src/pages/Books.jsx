@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Book from '../components/UI/Book';
+import Rating from '../components/UI/Rating'
 
 const Books = ({ books: initialBooks }) => {
     const [books, setBooks] = useState(initialBooks);
@@ -20,7 +21,7 @@ const Books = ({ books: initialBooks }) => {
             setBooks(base.sort((a, b) => (b.salePrice ?? b.originalPrice) - (a.salePrice ?? a.originalPrice)));
         }
         if (filter === "RATING") {
-            setBooks(base.sort((a, b) => (b.rating) - (a.rating)));
+            setBooks(base.sort((a, b) => (b.rating - 0) - (a.rating - 0)));
         }            
     }
     return (
