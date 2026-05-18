@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = () => {
+const Cart = ({ cart }) => {
     return (
         <div id="books__body">
             <main id="books__main">
@@ -16,20 +16,22 @@ const Cart = () => {
                                 <span className="cart__total">Price</span>
                             </div>
                             <div className="cart__body">
+                                {cart.map((book) => {
+                                    return (
                                 <div className="cart__item">
                                     <div className="cart__book">
                                         <img 
-                                        src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg" 
+                                        src={book.url} 
                                         className="cart__book--img" 
                                         alt="" 
                                         />
                                     <div className="cart__book--info">
                                        <span className="cart__book--title">
-                                        Crack the Coding Interview</span>
+                                        {book.title}</span>
                                         <span className="cart__book--price">
-                                            $10.00</span>
+                                        {cart.salePrice || book.originalPrice}</span>
                                         <button className="cart__book--remove">
-                                            Remove</button> 
+                                        Remove</button> 
                                     </div>
                                     </div>
                                    <div className="cart__quantity">
@@ -39,6 +41,9 @@ const Cart = () => {
                                         $10.00
                                     </div>
                                 </div>
+                                    )
+                                })
+                            }
                             </div>
                         </div>
                         <div className="total">
