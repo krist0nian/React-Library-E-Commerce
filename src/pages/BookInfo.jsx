@@ -7,16 +7,14 @@ import Book from "../components/UI/Book"
 import Books from "./Books"
 
 const BookInfo =({ books, addToCart }) => {
-    const { id } = useParams();
-    const book = books.find(book => +book.id === +id);
-    const [added, setAdded] = useState(false);
+  const { id } = useParams();
+  const book = books.find((book) => +book.id === +id);
+  const [added, setAdded] = useState(false);
 
-    function addBookToCart(book) {
-        setAdded(true);
-        addToCart(book)
-    }
-
-    console.log(id)
+  function addBookToCart(book) {
+    setAdded(true);
+    addToCart(book);
+  }
     return (
         <div id="books__body">
             <main id="books__main">
@@ -49,7 +47,7 @@ const BookInfo =({ books, addToCart }) => {
                             </p>
                         </div>
                         {added ? (
-                        <a href={`/cart`} className="book__link">    
+                            <a href="/cart">
                             <button className="btn">Checkout</button></a>
                         ) : (
                         <button className="btn" onClick={() => addBookToCart(book)}>
