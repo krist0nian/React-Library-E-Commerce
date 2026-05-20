@@ -29,7 +29,7 @@ const Cart = ({ cart }) => {
                                        <span className="cart__book--title">
                                         {book.title}</span>
                                         <span className="cart__book--price">
-                                        {cart.salePrice || book.originalPrice}</span>
+                                        {book.salePrice || book.originalPrice}</span>
                                         <button className="cart__book--remove">
                                         Remove</button> 
                                     </div>
@@ -38,12 +38,10 @@ const Cart = ({ cart }) => {
                                     <input type="number" min={0} max={99} className="cart__input" />
                                     </div>
                                     <div className="cart__total">
-                                        $10.00
-                                    </div>
+                                        $10.00</div>
                                 </div>
-                                    )
-                                })
-                            }
+                                    );
+                                })}
                             </div>
                         </div>
                         <div className="total">
