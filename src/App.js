@@ -14,8 +14,25 @@ function App() {
   const [cart, setCart] = useState([]);
 
   function addToCart(book) {
-    setCart([...cart, book])
+    setCart([...cart, {...book, quantity: 1}]);
   }
+
+  function changeQuantity(book, quantity) {
+    setCart(cart.map(item => {
+    return item.id === book.id
+      ? {
+        ...item,
+        quantity: +quantity,
+      }
+      : item
+    }
+  ))
+  }
+
+  function removeItem(book) {
+    setCart(cart.filter(book => book.id !== book.id))
+    console.log("removeItem", book)
+    }
 
   useEffect(() => {
     console.log(cart);
@@ -26,9 +43,9 @@ function App() {
     <div className="App">
       <Nav />
         <Route path="/" exact component={Home} />
-        <Route path="/books" exact render={() => <Books books={books} />} />
-        <Route path="/books/:id" render={() => <BookInfo books={books} addToCart={addToCart}/>} />
-        <Route path="/cart" render={() => <Cart books={books} cart={cart}/>} />
+        <Route path="/books" exact render={(props) => <Books {...props} books={books} addToCart={addToCart}/>} />
+        <Route path="/books/:id" render={(props) => <BookInfo {...props} books={books} addToCart={addToCart}/>} />
+        <Route path="/cart" render={() => <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>} />
       <Footer />
     </div>
     </Router>

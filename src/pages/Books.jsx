@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Book from '../components/UI/Book';
 import Rating from '../components/UI/Rating'
 
-const Books = ({ books: initialBooks }) => {
+const Books = ({ books: initialBooks, addToCart }) => {
     const [books, setBooks] = useState(initialBooks);
 
     useEffect(() => {
