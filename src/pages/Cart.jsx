@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import EmptyCart from "../assets/empty_cart.svg"
 
 const Cart = ({ cart, changeQuantity, book, books, removeItem }) => {
     const total = () => {
@@ -59,7 +60,15 @@ const Cart = ({ cart, changeQuantity, book, books, removeItem }) => {
                                     )
                             })}
                             </div>
+                            {cart.length === 0 && (
+                            <div className="cart__empty">
+                                <img src={EmptyCart} alt="" className="cart__empty--img" />
+                                <h2>You don't have any books in your cart!</h2>
+                                <a href="/books"><button className="btn">Browse Books</button></a>
+                            </div>
+                            )}
                         </div>
+                        {cart.length > 0 && (
                         <div className="total">
                             <div className="total__item total__subtotal">
                                <span>Subtotal</span>
@@ -79,6 +88,7 @@ const Cart = ({ cart, changeQuantity, book, books, removeItem }) => {
                                 Proceed to checkout
                             </button>
                         </div>
+                        )}
                     </div>
                 </div>
             </main>
