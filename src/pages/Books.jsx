@@ -10,7 +10,6 @@ const Books = ({ books: initialBooks, addToCart }) => {
     }, [initialBooks]);
 
     function filterBooks(filter) {
-        console.log(filter);
 
         const base = initialBooks.slice();
         

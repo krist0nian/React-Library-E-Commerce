@@ -1,24 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Rating from "../components/UI/Rating"
 import Price from "../components/UI/Price"
 import Book from "../components/UI/Book"
 import Books from "./Books"
 
-const BookInfo =({ books, addToCart, cart }) => {
+const BookInfo =({ books, addItemToCart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
-  const [added, setAdded] = useState(false);
-
-  function addBookToCart(book) {
-    setAdded(true);
-    addToCart(book);
-  }
-
-  function bookExistsOnCart() {
-    return books.find(book => book.id === +id);
-  }
 
     return (
         <div id="books__body">
@@ -51,14 +41,11 @@ const BookInfo =({ books, addToCart, cart }) => {
                               Lorem ipsum dolor sit amet consectetur adipsicing elit. Veniam, repellendus modi odio porro, consequuntur, asperiores minima sint volutpatem at reiciendis ducimus neque provident alias iur nihil explicabo nobis id voluptas.      
                             </p>
                         </div>
-                        {added ? (
-                            <a href="/cart">
-                            <button className="btn">Checkout</button></a>
-                        ) : (
-                        <button className="btn" onClick={() => addBookToCart(book)}>
+                
+                        <button className="btn" onClick={() => addItemToCart(book)}>
                             Add to cart
                         </button>
-                        )}
+        
                         </div>
                     </div>
                 </div>
