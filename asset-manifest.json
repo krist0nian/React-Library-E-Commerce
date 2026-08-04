@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.ef5f9444.css",
+    "main.js": "/my-app/static/js/main.ff6cf403.js",
+    "static/js/453.6465a6e1.chunk.js": "/my-app/static/js/453.6465a6e1.chunk.js",
+    "static/media/Undraw_Books.svg": "/my-app/static/media/Undraw_Books.64f45ed25262241aba12eff6dcb25d88.svg",
+    "static/media/Library.svg": "/my-app/static/media/Library.70d0a6a90c21c295982ded03f9ea8615.svg",
+    "static/media/empty_cart.svg": "/my-app/static/media/empty_cart.378125a834ec5473a1cffd7c59e06527.svg",
+    "index.html": "/my-app/index.html",
+    "static/media/wave.svg": "/my-app/static/media/wave.42edd5970e3619090a0f.svg",
+    "main.ef5f9444.css.map": "/my-app/static/css/main.ef5f9444.css.map",
+    "main.ff6cf403.js.map": "/my-app/static/js/main.ff6cf403.js.map",
+    "453.6465a6e1.chunk.js.map": "/my-app/static/js/453.6465a6e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef5f9444.css",
+    "static/js/main.ff6cf403.js"
+  ]
+}
